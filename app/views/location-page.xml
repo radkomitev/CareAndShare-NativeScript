@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout cssClass="stackStyle">
+    <Label text="Location page"/>
+    <Button text="Go next" tap="goToCameraPage"/>
+  </StackLayout>
+</Page>

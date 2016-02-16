@@ -1,0 +1,28 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<<<<<<< HEAD
+  <StackLayout>
+    <Label text="Details page"/>
+=======
+  <StackLayout  cssClass="stackStyle">
+    <Label text="All problems" cssClass="bigLabelStyle"/>
+    	<ListView  items="{{events}}" >
+  	   	<ListView.itemTemplate>
+  		  	<StackLayout orientation="horizontal"  >
+            <StackLayout width="150" height="150">
+  				    <Image  src="http://indianablackbreastfeedingcoalition.com/wp-content/themes/theron-lite/images/blank_img.png" />
+			      </StackLayout>
+			      <StackLayout>	
+  			      <Label text="{{'Title: '+ title}} " id="titleForEvent" cssClass="detailInfoLabel"/>
+  		        <Label text="{{'Idea: ' + idea}} " id="ideaForEvent" cssClass="detailInfoLabel"/>
+  	          <Label text="{{'Category: '+ category}} " id="categoryForEvent" cssClass="detailInfoLabel"/>
+  	          <Label text="{{'Priority: '+ proprity}} " id="priorityForEvent" cssClass="detailInfoLabel"/>
+            	<Label text="{{'Location: '+ location}}  " id="CategoryForEvent" cssClass="detailInfoLabel"/>
+			      </StackLayout>
+  			</StackLayout>
+  		</ListView.itemTemplate>
+  	</ListView>  	    
+<!-- 
+    <Button text="Back" height="80" tap="{{backAction}}" cssClass="cameraButton" /> -->
+>>>>>>> origin/master
+  </StackLayout>
+</Page>

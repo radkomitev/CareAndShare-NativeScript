@@ -1,0 +1,7 @@
+<Page id="mainPage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout>
+    <Button id="buttonSubmitProblem" text="Submit a problem" tap="goToLocationPage"/>
+    <Button id="buttonListProblem" text="List problems" />
+    <Button id="buttonAboutCareAndShare" text="About CareAndShare" />
+  </StackLayout>
+</Page>

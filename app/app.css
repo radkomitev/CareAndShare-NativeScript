@@ -1,0 +1,105 @@
+﻿.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+#mainPage
+{
+	background-color: black;
+}
+
+button {
+    font-size: 42;
+    margin-top: 20;
+	horizontal-align:stretch;
+	background-color: wheat;
+	font-size: 20;
+	height: 50;
+}
+
+
+.detailInfoLabel{
+	margin-left:15;
+	color : white;
+	horizontal-align:stretch;
+}
+
+.stackStyle{
+	background-color: black;
+}
+
+.bigLabelStyle{
+	color:white;
+	horizontal-align:center;
+	margin-bottom:10;
+	font-size:50;
+}
+
+#title {
+	color: black;
+	background-color: wheat;
+	margin-top: 20;
+    border-radius: 10;
+}
+
+#idea {
+	color: black;
+	background-color: wheat;
+	margin-top: 20;
+	border-radius: 10;
+}
+
+#labelChooseCategory {
+	margin-top: 20;
+	font-size: 20;
+	text-align: center;
+	color: wheat;
+}
+
+
+#sliderPriority {
+	margin-top: 30;
+	color: wheat;
+}
+
+#sliderPriorityValue {
+	font-size: 20;
+	color: wheat;
+	horizontal-align:center;
+}
+
+#listPicker {
+	background-color: wheat;
+	border-radius: 10;
+
+}
+
+#buttonSubmit {
+	background-color: green;
+	margin-top: 20;
+	border-radius: 10;
+}
+
+.detailInfoLabel{
+	margin-left:15;
+	color : white;
+	horizontal-align:stretch;
+}
+
+.stackStyle{
+	background-color: black;
+}
+
+.bigLabelStyle{
+	color:white;
+	horizontal-align:center;
+	margin-bottom:10;
+	font-size:50;
+}
+
+.message {
+    font-size: 20;
+    color: #284848;
+    horizontal-align: center;
+}

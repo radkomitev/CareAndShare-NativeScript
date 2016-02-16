@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+<<<<<<< HEAD
+        jar="C:\Android-SDK\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="E:\TELERIK\Homeworks\17.NativeScript\CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-2b93393d320fd286c9a985cae8dace891d28b2c4.jar" />
+    </item>
+    <item
+        jar="E:\TELERIK\Homeworks\17.NativeScript\CareAndShare\platforms\android\libs\nativescript.jar"
+=======
+        jar="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\classes-622b9e348a25568cd3166d7b521f388d64783a61.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\classes-8865dc706a4b926c59d6d12173c8146f782b2805.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\libs\nativescript.jar"
+>>>>>>> origin/master
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\nativescript-180d19871f68f926bb63152d525ec0ba5e19547b.jar" />
+    </item>
+    <item
+<<<<<<< HEAD
+        jar="E:\TELERIK\Homeworks\17.NativeScript\NativeScript-CareAndShare\platforms\android\libs\nativescript.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="E:\TELERIK\Homeworks\17.NativeScript\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\nativescript-fbb3c24bbd8cd011954916e9c1b13184bc81e03e.jar" />
+    </item>
+    <item
+        jar="E:\TELERIK\Homeworks\17.NativeScript\NativeScript-CareAndShare\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="E:\TELERIK\Homeworks\17.NativeScript\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\widgets-31a967b8aee25a59fb2f01dca00f212e1efbdea2.jar" />
+    </item>
+    <item
+        jar="E:\TELERIK\Homeworks\17.NativeScript\CareAndShare\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="E:\TELERIK\Homeworks\17.NativeScript\CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\widgets-a1308f4003b72268aec426f97b1aea03274a77b8.jar" />
+=======
+        jar="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\widgets-a23aabb0c1fb27b02224506a8d34235990ddb685.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\AppData\Local\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-1d8eb18890c629c9a6d6dfe60e852bf8d76bdf61.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\User\Desktop\CareAndShare\NativeScript-CareAndShare\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-dcdbb3e94ce1eeb6977a45c609ec2233768e015b.jar" />
+>>>>>>> origin/master
+    </item>
+
+</items>

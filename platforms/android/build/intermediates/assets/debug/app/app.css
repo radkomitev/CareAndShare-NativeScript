@@ -1,0 +1,47 @@
+﻿.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+#buttonListProblem
+{
+	background-color: wheat;
+	height: 50;
+	font-size: 20;
+	margin-top: 20;
+	horizontal-align:stretch;	
+}
+
+#buttonSubmitProblem
+{
+	background-color: wheat;
+	height: 50;
+	font-size: 20;
+	horizontal-align:stretch;	
+}
+
+#buttonAboutCareAndShare
+{
+	background-color: wheat;
+	height: 50;
+	font-size: 20;
+	margin-top: 20;
+	horizontal-align:stretch;	
+}
+
+#mainPage
+{
+	background-color: black;
+}
+
+button {
+    font-size: 42;
+    horizontal-align: center;
+}
+
+.message {
+    font-size: 20;
+    color: #284848;
+    horizontal-align: center;
+}

@@ -1,0 +1,7 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout cssClass="stackStyle">   
+  	<Image id="myImg" width="250" height="350"  />
+  	<Button text="Take picture" tap="takePicture"/>
+    <Button text="Go next" tap="goToDetailsPage"/>
+  </StackLayout>
+</Page>

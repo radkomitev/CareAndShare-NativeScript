@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <StackLayout cssClass="stackStyle">
+    <TextField id="title" hint="Enter the title of problem..." keyboardType="email" autocorrect="false" autocapitalizationType="none" textWrap="true"/>
+    <TextField id="idea" hint="Enter your cool idea..."/>
+    <Label id="labelChooseCategory" text="Choose category"></Label>
+    <ListPicker id="listPicker" items="{{ myItems }}" selectedIndex="{{ selectedIndex }}"></ListPicker>
+    <Slider id="sliderPriority" propertyChange="change" minValue="{{ minValue }}" maxValue="{{ maxvalue }}" value="{{ sliderValue }}" />
+    <Label id="sliderPriorityValue" text="{{ 'Priority ' + sliderValue }}" textWrap="true" />
+    <Button id="buttonSubmit" tap="submitProblem" text="Submit your idea" />
+  </StackLayout>
+</Page>
