@@ -1,9 +1,27 @@
 var listPickerModule = require("ui/list-picker");
 var observable = require("data/observable");
 var frameModule = require("ui/frame");
+var Everlive = require("~/libs/everlive/everlive.all.min");
+var el = new Everlive('wzgxk32dkp4rhuz0');
+var dialogs = require("ui/dialogs");
+
+//ui elems
+var tfTitle,
+    tfIdea,
+    selectedCategoryIndex,
+    priorityValue;
+    // locationValue,
+    // imageValue;
 
 function pageLoaded(args) {
 	var page = args.object;
+
+    problemInfo = {};
+    tfTitle = page.getViewById("title");
+    tfIdea = page.getViewById("idea");
+    selectedCategoryIndex = page.getViewById("listPicker");
+    priorityValue = page.getViewById("sliderPriority");
+
 
 	var model = new observable.Observable({
         "myItems" : ["Health", "Infrastructure", "Sport", "Animal", "Other"],
@@ -19,6 +37,35 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 
 exports.submitProblem = function() {
-	var topmost = frameModule.topmost();
-	topmost.navigate("./main-page");
+
+
+
+    if ((!tfTitle.text || tfTitle.text.length < 3) ||
+        (!tfIdea.text || tfIdea.text.length < 3)) {
+        dialogs.alert({
+            title: "Invalid info input",
+            message: "Make sure all the fields are filled with valid info",
+            okButtonText: "Ok"
+        });
+        console.log('problem info in if block ' + JSON.stringify(problemInfo));
+    } else {
+
+        problemInfo.title = tfTitle.text;
+        problemInfo.idea = tfIdea.text;
+        problemInfo.priority = +priorityValue.value;
+        problemInfo.categoryName = selectedCategoryIndex.selectedIndex ;
+        problemInfo.location = "myLocation";
+ console.log(tfTitle.text);
+        var data = el.data('problem');
+        
+        data.create(problemInfo, function(data) {
+            console.log(JSON.stringify(data));
+        }, function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }
+
+
+	// var topmost = frameModule.topmost();
+	// topmost.navigate("./main-page");
 }
