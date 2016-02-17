@@ -1,3 +1,6 @@
+'use strict';
+
+let view = require('ui/core/view');
 var frameModule = require("ui/frame");
 var camera = require("camera");
 var imageSource = require("image-source");
@@ -8,6 +11,7 @@ var fileId;
 var myLocation;
 var isImageClicked = false;
 var imageToPass;
+var imageSet = false;
 
 function pageLoaded(args) {
 	var page = args.object;
@@ -16,12 +20,21 @@ function pageLoaded(args) {
 	myLocation = page.bindingContext.locationProblem;
 
 	myImage = page.getViewById("myImg");
-	myImage.on('doubleTap', function(args) {
+	if (!imageSet) {};
+
+	myImage.on('longPress', function(args) {
+
 		if (!isImageClicked) {
+			console.log("first");
 			isImageClicked = true;
 			myImage.width *= 2;
 			myImage.height *= 2;
-		} else {
+		}
+	});
+
+	myImage.on('doubleTap', function(args) {
+		if (isImageClicked) {
+			console.log("second");
 			myImage.width *= 0.5;
 			myImage.height *= 0.5;
 			isImageClicked = false;
@@ -30,7 +43,7 @@ function pageLoaded(args) {
 }
 
 function takePicture() {
-		camera.takePicture().then(function(picture) {
+	camera.takePicture().then(function(picture) {
 		myImage.imageSource = picture;
 		imageToPass = myImage.imageSource.toBase64String('.jpg', 100);
 		var file = {
@@ -42,6 +55,7 @@ function takePicture() {
 
 			fileId = response.result.Id;
 			console.log('FILE ID  +++ ' + fileId);
+			imageSet = true;
 		}, function(err) {
 			console.log("Unfortunately the upload failed: " + err.message);
 		});
@@ -51,7 +65,7 @@ function takePicture() {
 exports.goToDetailsPage = function() {
 
 	var topmost = frameModule.topmost();
-console.log(fileId);
+	console.log(fileId);
 	var navigationEntry = {
 		moduleName: "./views/details-page",
 		context: {

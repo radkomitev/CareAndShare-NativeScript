@@ -1,12 +1,17 @@
+'use strict';
+
+let view = require('ui/core/view');
 var frameModule = require("ui/frame");
 var camera = require("camera");
 var imageSource = require("image-source");
 var Everlive = require("~/libs/everlive/everlive.all.min");
 var el = new Everlive('wzgxk32dkp4rhuz0');
 var myImage;
+var fileId;
 var myLocation;
 var isImageClicked = false;
 var imageToPass;
+var imageSet=false;
 
 function pageLoaded(args) {
 	var page = args.object;
@@ -15,7 +20,10 @@ function pageLoaded(args) {
 	myLocation = page.bindingContext.locationProblem;
 
 	myImage = page.getViewById("myImg");
-	myImage.on('doubleTap', function(args) {
+	if(!imageSet){};
+
+	myImage.on('longPress', function(args) {
+		console.log(true);
 		if (!isImageClicked) {
 			isImageClicked = true;
 			myImage.width *= 2;
@@ -26,22 +34,28 @@ function pageLoaded(args) {
 			isImageClicked = false;
 		}
 	});
+
+
+	var observer = myImage.observe(gestures.GestureTypes.LongPress, function (args) {
+    console.log("Long Press");
+});
+
 }
 
 function takePicture() {
 		camera.takePicture().then(function(picture) {
 		myImage.imageSource = picture;
 		imageToPass = myImage.imageSource.toBase64String('.jpg', 100);
-	
 		var file = {
 			Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
 			ContentType: "image/jpeg",
 			base64: imageToPass
 		};
-
 		el.Files.create(file, function(response) {
-			var fileUri = response.result.Uri;
-			console.log('FILE URI   +++ ' + fileUri);
+
+			fileId = response.result.Id;
+			console.log('FILE ID  +++ ' + fileId);
+			imageSet = true;
 		}, function(err) {
 			console.log("Unfortunately the upload failed: " + err.message);
 		});
@@ -51,11 +65,11 @@ function takePicture() {
 exports.goToDetailsPage = function() {
 
 	var topmost = frameModule.topmost();
-
+console.log(fileId);
 	var navigationEntry = {
 		moduleName: "./views/details-page",
 		context: {
-			image: imageToPass,
+			image: fileId,
 			location: myLocation
 		},
 		animated: false
