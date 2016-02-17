@@ -16,6 +16,7 @@ button {
 	background-color: wheat;
 	font-size: 20;
 	height: 50;
+	border-radius: 10;
 }
 
 
@@ -79,6 +80,15 @@ button {
 	background-color: green;
 	margin-top: 20;
 	border-radius: 10;
+}
+
+#labelAboutApp{
+	background-color: black;
+	color: wheat;
+	word-wrap: break-word;
+	margin-top: 0;
+	font-size: 22;
+	opacity: 0;
 }
 
 .detailInfoLabel{
