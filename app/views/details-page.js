@@ -9,12 +9,19 @@ var dialogs = require("ui/dialogs");
 var tfTitle,
     tfIdea,
     selectedCategoryIndex,
-    priorityValue;
-    // locationValue,
-    // imageValue;
+    priorityValue,
+    locationValue,
+    imageValue;
 
 function pageLoaded(args) {
 	var page = args.object;
+
+    page.bindingContext = page.navigationContext;
+    imageValue= page.bindingContext.image;
+    locationValue = page.bindingContext.location;
+
+    console.log(imageValue);
+    console.log(locationValue);
 
     problemInfo = {};
     tfTitle = page.getViewById("title");
@@ -51,7 +58,7 @@ exports.submitProblem = function() {
         problemInfo.priority = +priorityValue.value;
         problemInfo.categoryName = selectedCategoryIndex.selectedIndex ;
         problemInfo.location = "myLocation";
- console.log(tfTitle.text);
+
         var data = el.data('problem');
         
         data.create(problemInfo, function(data) {

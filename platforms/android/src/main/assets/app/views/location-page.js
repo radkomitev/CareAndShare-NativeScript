@@ -5,8 +5,16 @@ function pageLoaded(args) {
 }
 
 exports.goToCameraPage = function() {
-	var topmost = frameModule.topmost();
-	topmost.navigate("./views/camera-page");
+
+    var topmost = frameModule.topmost();
+
+	var navigationEntry = {
+   	 moduleName: "./views/camera-page",
+   	 context: {locationProblem: "MyLocation"},
+   	 animated: true
+	};
+
+	topmost.navigate(navigationEntry);
 }
 
 exports.pageLoaded = pageLoaded;

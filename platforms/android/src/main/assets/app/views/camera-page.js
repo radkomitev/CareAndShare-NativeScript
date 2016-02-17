@@ -1,10 +1,16 @@
 var frameModule = require("ui/frame");
 var camera = require("camera");
 var myImage;
+var myLocation;
 var isImageClicked = false;
 
 function pageLoaded(args) {
 	var page = args.object;
+
+    page.bindingContext = page.navigationContext;
+    console.log(page.bindingContext.locationProblem);
+	myLocation = page.bindingContext.locationProblem;
+
 	myImage = page.getViewById("myImg");
     myImage.on('doubleTap', function(args) {
     	if(!isImageClicked){	
@@ -27,8 +33,19 @@ function takePicture() {
 }
 
 exports.goToDetailsPage = function() {
-	var topmost = frameModule.topmost();
-	topmost.navigate("./views/details-page");
+
+    var topmost = frameModule.topmost();
+
+// console.log(myImage);
+// console.log(myImage.imageSource);
+
+	var navigationEntry = {
+   	 moduleName: "./views/details-page",
+   	 context: {image: myImage, location : myLocation},
+   	 animated: false
+	};
+
+	topmost.navigate(navigationEntry);
 }
 
 exports.pageLoaded = pageLoaded;
