@@ -1,4 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <Page.actionBar>
+      <ActionBar title="List"/>
+  </Page.actionBar>
   <StackLayout  cssClass="stackStyle">
     <Label text="All problems" cssClass="bigLabelStyle"/>
     	<ListView  items="{{events}}" >

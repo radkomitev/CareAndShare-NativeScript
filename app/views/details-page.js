@@ -22,7 +22,6 @@ function pageLoaded(args) {
     selectedCategoryIndex = page.getViewById("listPicker");
     priorityValue = page.getViewById("sliderPriority");
 
-
 	var model = new observable.Observable({
         "myItems" : ["Health", "Infrastructure", "Sport", "Animal", "Other"],
         "selectedIndex" : 2,      
@@ -37,9 +36,6 @@ function pageLoaded(args) {
 exports.pageLoaded = pageLoaded;
 
 exports.submitProblem = function() {
-
-
-
     if ((!tfTitle.text || tfTitle.text.length < 3) ||
         (!tfIdea.text || tfIdea.text.length < 3)) {
         dialogs.alert({

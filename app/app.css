@@ -108,6 +108,17 @@ button {
 	font-size:50;
 }
 
+#labelTitle{
+	font-size: 25;
+	color: wheat;
+	margin-bottom: -15;
+}
+
+#labelIdea{
+	font-size: 25;
+	color: wheat;
+	margin-bottom: -15;
+}
 .message {
     font-size: 20;
     color: #284848;

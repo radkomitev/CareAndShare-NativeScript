@@ -1,13 +1,15 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <Page.actionBar>
+      <ActionBar title="Details"/>
+  </Page.actionBar>
   <StackLayout cssClass="stackStyle">
-    <TextField id="title" hint="Enter the title of problem..." keyboardType="email" autocorrect="false" autocapitalizationType="none" textWrap="true"/>
-    <TextField id="idea" hint="Enter your cool idea..."/>
+    <Label id="labelTitle" text="Title"></Label>
+    <TextField id="title" hint="your brief title must be greather than 3 symbols..." keyboardType="email" autocorrect="false" autocapitalizationType="none" textWrap="true"/>
+    <Label id="labelIdea" text="Idea">></Label>
+    <TextField id="idea" hint="your cool idea must be greather than 3 symbols..."/>
     <Label id="labelChooseCategory" text="Choose category"></Label>
-
-    <ListPicker id="listPicker" items="{{ myItems }}" selectedIndex="{{ selectedIndex }}">
-    	
-    </ListPicker>
-    
+    <ListPicker id="listPicker" items="{{ myItems }}" selectedIndex="{{ selectedIndex }}">   	
+    </ListPicker>    
     <Slider id="sliderPriority" propertyChange="change" minValue="{{ minValue }}" maxValue="{{ maxvalue }}" value="{{ sliderValue }}" />
     <Label id="sliderPriorityValue" text="{{ 'Priority ' + sliderValue }}" textWrap="true" />
     <Button id="buttonSubmit" tap="submitProblem" text="Submit your idea" />
