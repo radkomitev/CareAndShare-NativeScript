@@ -1,36 +1,68 @@
 var frameModule = require("ui/frame");
-<<<<<<< HEAD
-
-function pageLoaded(args) {
-    var page = args.object;
-}
-
-exports.goToDetailsPage = function(){
-	var topmost = frameModule.topmost();
-	topmost.navigate("./views/details-page");  
-}
-
-exports.pageLoaded = pageLoaded;
-=======
 var camera = require("camera");
+var imageSource = require("image-source");
+var Everlive = require("~/libs/everlive/everlive.all.min");
+var el = new Everlive('wzgxk32dkp4rhuz0');
 var myImage;
+var myLocation;
+var isImageClicked = false;
+var imageToPass;
 
 function pageLoaded(args) {
 	var page = args.object;
+
+	page.bindingContext = page.navigationContext;
+	myLocation = page.bindingContext.locationProblem;
+
 	myImage = page.getViewById("myImg");
+	myImage.on('doubleTap', function(args) {
+		if (!isImageClicked) {
+			isImageClicked = true;
+			myImage.width *= 2;
+			myImage.height *= 2;
+		} else {
+			myImage.width *= 0.5;
+			myImage.height *= 0.5;
+			isImageClicked = false;
+		}
+	});
 }
 
 function takePicture() {
-	camera.takePicture().then(function(picture) {
+		camera.takePicture().then(function(picture) {
 		myImage.imageSource = picture;
+		imageToPass = myImage.imageSource.toBase64String('.jpg', 100);
+	
+		var file = {
+			Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
+			ContentType: "image/jpeg",
+			base64: imageToPass
+		};
+
+		el.Files.create(file, function(response) {
+			var fileUri = response.result.Uri;
+			console.log('FILE URI   +++ ' + fileUri);
+		}, function(err) {
+			console.log("Unfortunately the upload failed: " + err.message);
+		});
 	});
 }
 
 exports.goToDetailsPage = function() {
+
 	var topmost = frameModule.topmost();
-	topmost.navigate("./views/details-page");
+
+	var navigationEntry = {
+		moduleName: "./views/details-page",
+		context: {
+			image: imageToPass,
+			location: myLocation
+		},
+		animated: false
+	};
+
+	topmost.navigate(navigationEntry);
 }
 
 exports.pageLoaded = pageLoaded;
 exports.takePicture = takePicture;
->>>>>>> origin/master

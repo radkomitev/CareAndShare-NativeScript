@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
-    <!-- From: file:/E:/TELERIK/Homeworks/17.NativeScript/NativeScript-CareAndShare/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-sw600dp/values-sw600dp.xml -->
-=======
-    <!-- From: file:/C:/Users/User/Desktop/CareAndShare/NativeScript-CareAndShare/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-sw600dp/values-sw600dp.xml -->
->>>>>>> origin/master
+    <!-- From: file:/C:/Users/User/Desktop/last/CareAndShare-NativeScript/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-sw600dp/values-sw600dp.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">24dp</dimen>
     <dimen name="abc_action_bar_default_height_material">64dp</dimen>

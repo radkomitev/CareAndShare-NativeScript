@@ -5,7 +5,7 @@ var Everlive = require("~/libs/everlive/everlive.all.min");
 var el = new Everlive('wzgxk32dkp4rhuz0');
 var dialogs = require("ui/dialogs");
 
-//ui elems
+//ui elements
 var tfTitle,
     tfIdea,
     selectedCategoryIndex,
@@ -14,14 +14,11 @@ var tfTitle,
     imageValue;
 
 function pageLoaded(args) {
-	var page = args.object;
+    var page = args.object;
 
     page.bindingContext = page.navigationContext;
-    imageValue= page.bindingContext.image;
+    imageValue = page.bindingContext.image;
     locationValue = page.bindingContext.location;
-
-    console.log(imageValue);
-    console.log(locationValue);
 
     problemInfo = {};
     tfTitle = page.getViewById("title");
@@ -29,16 +26,16 @@ function pageLoaded(args) {
     selectedCategoryIndex = page.getViewById("listPicker");
     priorityValue = page.getViewById("sliderPriority");
 
-	var model = new observable.Observable({
-        "myItems" : ["Health", "Infrastructure", "Sport", "Animal", "Other"],
-        "selectedIndex" : 2,      
+    var model = new observable.Observable({
+        "myItems": ["Health", "Infrastructure", "Sport", "Animal", "Other"],
+        "selectedIndex": 2,
         "minValue": 0,
         "maxValue": 100,
-        "sliderValue":50,
+        "sliderValue": 50,
     });
 
-	page.bindingContext = model;
-  };
+    page.bindingContext = model;
+};
 
 exports.pageLoaded = pageLoaded;
 
@@ -56,19 +53,18 @@ exports.submitProblem = function() {
         problemInfo.title = tfTitle.text;
         problemInfo.idea = tfIdea.text;
         problemInfo.priority = +priorityValue.value;
-        problemInfo.categoryName = selectedCategoryIndex.selectedIndex ;
-        problemInfo.location = "myLocation";
+        problemInfo.categoryName = selectedCategoryIndex.selectedIndex;
+        problemInfo.location = locationValue;
+        problemInfo.image = imageValue;
 
         var data = el.data('problem');
-        
+
         data.create(problemInfo, function(data) {
             console.log(JSON.stringify(data));
         }, function(error) {
             console.log(JSON.stringify(error));
         });
     }
-
-
-	// var topmost = frameModule.topmost();
-	// topmost.navigate("./main-page");
+    // var topmost = frameModule.topmost();
+    // topmost.navigate("./main-page");
 }

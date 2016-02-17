@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD:platforms/android/build/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml
-    <!-- From: file:/E:/TELERIK/Homeworks/17.NativeScript/NativeScript-CareAndShare/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-pt-rBR/values-pt-rBR.xml -->
-=======
     <!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/lmp-mr1-supportlib-release/frameworks/support/v7/appcompat/res/values-pt/strings.xml -->
->>>>>>> origin/master:platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-pt/values-pt.xml
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Navegar para a página inicial"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Navegar para cima"</string>

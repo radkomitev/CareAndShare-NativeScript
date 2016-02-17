@@ -6,12 +6,15 @@ function pageLoaded(args) {
 
 exports.goToCameraPage = function() {
 
-    var topmost = frameModule.topmost();
-
+	var topmost = frameModule.topmost();
+	
+	//TODO: replace MYlocation with real string location
 	var navigationEntry = {
-   	 moduleName: "./views/camera-page",
-   	 context: {locationProblem: "MyLocation"},
-   	 animated: true
+		moduleName: "./views/camera-page",
+		context: {
+			locationProblem: "MyLocation"
+		},
+		animated: true
 	};
 
 	topmost.navigate(navigationEntry);

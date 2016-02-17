@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD:platforms/android/build/intermediates/res/merged/debug/values-en-rAU/values-en-rAU.xml
-    <!-- From: file:/E:/TELERIK/Homeworks/17.NativeScript/NativeScript-CareAndShare/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-en-rAU/values-en-rAU.xml -->
-=======
     <!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/lmp-mr1-supportlib-release/frameworks/support/v7/appcompat/res/values-en-rGB/strings.xml -->
->>>>>>> origin/master:platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-en-rGB/values-en-rGB.xml
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Navigate home"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Navigate up"</string>
