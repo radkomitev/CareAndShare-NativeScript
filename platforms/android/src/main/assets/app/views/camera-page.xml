@@ -3,7 +3,7 @@
       <ActionBar title="Camera"/>
   </Page.actionBar>
   <StackLayout cssClass="stackStyle">   
-  	<Image id="myImg" width="250" height="330" borderRadius="5" />
+  	<Image id="myImg" width="250" height="330" borderRadius="20" />
   	<Label text="double tap to zoom in" color="white" fontSize="30" visibility="collapsed" id="zoomInfo" opacity="0.2" horizontalAlignment="center"/>
   	<Button text="Take picture" tap="takePicture"/>
     <Button text="Go next" tap="goToDetailsPage"/>

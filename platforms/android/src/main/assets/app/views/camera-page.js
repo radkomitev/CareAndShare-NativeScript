@@ -6,8 +6,9 @@ var camera = require("camera");
 var imageSource = require("image-source");
 var Everlive = require("~/libs/everlive/everlive.all.min");
 var el = new Everlive('wzgxk32dkp4rhuz0');
+let sound = require("nativescript-sound");
 var myImage;
-var fileId;
+var fileUri;
 var myLocation;
 var isImageClicked = false;
 var imageToPass;
@@ -68,8 +69,8 @@ function takePicture() {
 
 	camera.takePicture().then(function(picture) {
 		myImage.imageSource = picture;
-
 		zoomInfoLabel.visibility = "visible";
+
 		imageToPass = myImage.imageSource.toBase64String('.jpg', 100);
 		var file = {
 			Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
@@ -78,8 +79,10 @@ function takePicture() {
 		};
 		el.Files.create(file, function(response) {
 
-			fileId = response.result.Id;
-			console.log('FILE ID  +++ ' + fileId);
+console.log(JSON.stringify(response));
+
+			fileUri = response.result.Uri;
+			console.log('FILE ID  +++ ' + fileUri);
 			imageSet = true;
 
 		}, function(err) {
@@ -89,13 +92,23 @@ function takePicture() {
 }
 
 exports.goToDetailsPage = function() {
+	
+	// console.log(sound);
+	// var tada = sound.create("~/sounds/camera.mp3");
+	// console.log(tada);
+
+	// for (var k in tada) {
+	// 	console.log(k);
+	// };
+
+	// tada.play();
 
 	var topmost = frameModule.topmost();
-	console.log(fileId);
+	
 	var navigationEntry = {
 		moduleName: "./views/details-page",
 		context: {
-			image: fileId,
+			image: fileUri,
 			location: myLocation
 		},
 		animated: false

@@ -20,6 +20,7 @@ function pageLoaded(args) {
 
     page.bindingContext = page.navigationContext;
     imageValue = page.bindingContext.image;
+    console.log(imageValue);
     locationValue = page.bindingContext.location;
 
     problemInfo = {};

@@ -10,46 +10,12 @@ class EventViewModel extends observable.Observable {
 
 	constructor() {
 		super();
-		// this.events = new observableArrayModule.ObservableArray([]);
-		// this.events.push( {colour: "grey", name: "Spot", size: 46});
 
-		this.events = [{
-			title: "Dangerous intersect",
-			idea: "Walkaway",
-			category: "Infrastructure",
-			location: "Sofia",
-			proprity: 9
-		}, {
-			title: "Disrupting terrace",
-			idea: "Reconstruction",
-			category: "Infrastructure",
-			location: "Bourgas",
-			proprity: 8
-		}, {
-			title: "Old Swings",
-			idea: "Modernize park",
-			category: "Health",
-			location: "Pernik",
-			proprity: 5
-		}, {
-			title: "Dangerous intersect",
-			idea: "Walkaway",
-			category: "Infrastructure",
-			location: "Sofia",
-			proprity: 9
-		}, {
-			title: "Disrupting terrace",
-			idea: "Reconstruction",
-			category: "Infrastructure",
-			location: "Bourgas",
-			proprity: 8
-		}, {
-			title: "Old Swings",
-			idea: "Modernize park",
-			category: "Health",
-			location: "Pernik",
-			proprity: 5
-		}];
+		this.events = [];
+	}
+
+	loadProblems(data){
+		this.set("events",data);
 	}
 
 	backAction() {
