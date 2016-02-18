@@ -27,16 +27,33 @@ function pageLoaded(args) {
 		if (!isImageClicked) {
 			console.log("first");
 			isImageClicked = true;
-			myImage.width *= 2;
-			myImage.height *= 2;
+			// myImage.width *= 2;
+			// myImage.height *= 2;
+			myImage.animate({
+				duration: 3000,
+				rotate: 360,
+				scale: {
+					x: 1.5,
+					y: 1.5
+				}
+			});
+
 		}
 	});
 
 	myImage.on('doubleTap', function(args) {
 		if (isImageClicked) {
 			console.log("second");
-			myImage.width *= 0.5;
-			myImage.height *= 0.5;
+			myImage.animate({
+				duration: 3000,
+				rotate: 0,
+				scale: {
+					y: 1,
+					x: 1
+				}
+			});
+			// myImage.width *= 0.5;
+			// myImage.height *= 0.5;
 			isImageClicked = false;
 		}
 	});

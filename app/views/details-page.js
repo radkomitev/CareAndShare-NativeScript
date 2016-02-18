@@ -65,6 +65,6 @@ exports.submitProblem = function() {
             console.log(JSON.stringify(error));
         });
     }
-    // var topmost = frameModule.topmost();
-    // topmost.navigate("./main-page");
+    var topmost = frameModule.topmost();
+    topmost.navigate("./main-page");
 }

@@ -11,7 +11,7 @@ var fileId;
 var myLocation;
 var isImageClicked = false;
 var imageToPass;
-var imageSet=false;
+var imageSet = false;
 
 function pageLoaded(args) {
 	var page = args.object;
@@ -20,30 +20,30 @@ function pageLoaded(args) {
 	myLocation = page.bindingContext.locationProblem;
 
 	myImage = page.getViewById("myImg");
-	if(!imageSet){};
+	if (!imageSet) {};
 
 	myImage.on('longPress', function(args) {
-		console.log(true);
+
 		if (!isImageClicked) {
+			console.log("first");
 			isImageClicked = true;
 			myImage.width *= 2;
 			myImage.height *= 2;
-		} else {
+		}
+	});
+
+	myImage.on('doubleTap', function(args) {
+		if (isImageClicked) {
+			console.log("second");
 			myImage.width *= 0.5;
 			myImage.height *= 0.5;
 			isImageClicked = false;
 		}
 	});
-
-
-	var observer = myImage.observe(gestures.GestureTypes.LongPress, function (args) {
-    console.log("Long Press");
-});
-
 }
 
 function takePicture() {
-		camera.takePicture().then(function(picture) {
+	camera.takePicture().then(function(picture) {
 		myImage.imageSource = picture;
 		imageToPass = myImage.imageSource.toBase64String('.jpg', 100);
 		var file = {
@@ -65,7 +65,7 @@ function takePicture() {
 exports.goToDetailsPage = function() {
 
 	var topmost = frameModule.topmost();
-console.log(fileId);
+	console.log(fileId);
 	var navigationEntry = {
 		moduleName: "./views/details-page",
 		context: {
