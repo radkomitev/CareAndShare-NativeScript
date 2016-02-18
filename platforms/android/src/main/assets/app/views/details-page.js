@@ -17,10 +17,10 @@ var tfTitle,
 
 function pageLoaded(args) {
     var page = args.object;
-
+    
     page.bindingContext = page.navigationContext;
     imageValue = page.bindingContext.image;
-    console.log(imageValue);
+    console.log("tukaa"+ imageValue);
     locationValue = page.bindingContext.location;
 
     problemInfo = {};
