@@ -4,6 +4,7 @@ var frameModule = require("ui/frame");
 var Everlive = require("~/libs/everlive/everlive.all.min");
 var el = new Everlive('wzgxk32dkp4rhuz0');
 var dialogs = require("ui/dialogs");
+var Toast = require("nativescript-toast");
 
 //ui elements
 var tfTitle,
@@ -42,11 +43,14 @@ exports.pageLoaded = pageLoaded;
 exports.submitProblem = function() {
     if ((!tfTitle.text || tfTitle.text.length < 3) ||
         (!tfIdea.text || tfIdea.text.length < 3)) {
-        dialogs.alert({
-            title: "Invalid info input",
-            message: "Make sure all the fields are filled with valid info",
-            okButtonText: "Ok"
-        });
+
+        var toast = Toast.makeText("Hello World");
+        toast.show();
+        // dialogs.alert({
+        //     title: "Invalid info input",
+        //     message: "Make sure all the fields are filled with valid info",
+        //     okButtonText: "Ok"
+        // });
         console.log('problem info in if block ' + JSON.stringify(problemInfo));
     } else {
 
@@ -65,6 +69,6 @@ exports.submitProblem = function() {
             console.log(JSON.stringify(error));
         });
     }
-    // var topmost = frameModule.topmost();
-    // topmost.navigate("./main-page");
+    var topmost = frameModule.topmost();
+    topmost.navigate("./main-page");
 }

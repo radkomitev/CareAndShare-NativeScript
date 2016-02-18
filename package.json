@@ -1,11 +1,13 @@
 {
-	"nativescript": {
-		"id": "org.nativescript.CareAndShare",
-		"tns-android": {
-			"version": "1.5.1"
-		}
-	},
-	"dependencies": {
-		"tns-core-modules": "1.5.2"
-	}
+  "nativescript": {
+    "id": "org.nativescript.CareAndShare",
+    "tns-android": {
+      "version": "1.5.1"
+    }
+  },
+  "dependencies": {
+    "nativescript-toast": "^1.2.0",
+    "nativescript-vibrate": "^1.1.1",
+    "tns-core-modules": "1.5.2"
+  }
 }

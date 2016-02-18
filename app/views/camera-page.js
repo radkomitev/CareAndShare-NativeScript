@@ -11,6 +11,7 @@ var fileId;
 var myLocation;
 var isImageClicked = false;
 var imageToPass;
+var zoomInfoLabel;
 var imageSet = false;
 
 function pageLoaded(args) {
@@ -20,9 +21,10 @@ function pageLoaded(args) {
 	myLocation = page.bindingContext.locationProblem;
 
 	myImage = page.getViewById("myImg");
+	zoomInfoLabel = page.getViewById("zoomInfo");
 	if (!imageSet) {};
 
-	myImage.on('longPress', function(args) {
+	myImage.on('doubleTap', function(args) {
 
 		if (!isImageClicked) {
 			console.log("first");
@@ -38,10 +40,11 @@ function pageLoaded(args) {
 				}
 			});
 
+			zoomInfoLabel.text = "long press to zoom out";
 		}
 	});
 
-	myImage.on('doubleTap', function(args) {
+	myImage.on('longPress', function(args) {
 		if (isImageClicked) {
 			console.log("second");
 			myImage.animate({
@@ -55,13 +58,18 @@ function pageLoaded(args) {
 			// myImage.width *= 0.5;
 			// myImage.height *= 0.5;
 			isImageClicked = false;
+			zoomInfoLabel.text = "double tap to zoom in";
 		}
 	});
 }
 
 function takePicture() {
+
+
 	camera.takePicture().then(function(picture) {
 		myImage.imageSource = picture;
+
+		zoomInfoLabel.visibility = "visible";
 		imageToPass = myImage.imageSource.toBase64String('.jpg', 100);
 		var file = {
 			Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
@@ -73,6 +81,7 @@ function takePicture() {
 			fileId = response.result.Id;
 			console.log('FILE ID  +++ ' + fileId);
 			imageSet = true;
+
 		}, function(err) {
 			console.log("Unfortunately the upload failed: " + err.message);
 		});
