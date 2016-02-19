@@ -19,6 +19,21 @@ button {
 	border-radius: 10;
 }
 
+#buttonHelp
+{
+	horizontal-align:stretch;
+	background-color: white;
+	margin-left: 200;
+	border-radius: 30;
+	font-size: 15;
+	height: 40;
+	width: 60;
+}
+
+#labelHelp{
+	padding-top: 20;
+	font-size: 20;
+}
 
 .detailInfoLabel{
 	margin-left:15;
@@ -123,4 +138,51 @@ button {
     font-size: 20;
     color: #284848;
     horizontal-align: center;
+}
+
+#labelHelpFirst{
+	opacity: 0;
+	color: wheat;
+	padding-top: 100;
+	font-size: 20;
+}
+
+#labelHelpSecond{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpThird{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpFourth{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpFifth{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpSixth{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
 }

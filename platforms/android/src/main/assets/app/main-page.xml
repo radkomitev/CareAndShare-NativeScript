@@ -1,6 +1,13 @@
 <Page id="mainPage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <Page.actionBar>
-      <ActionBar title="Home Page"/>
+    <ActionBar>
+      <ActionBar.titleView>
+        <StackLayout orientation="horizontal">
+          <Label id="labelHelp" text="Home Page"/>
+          <Button id="buttonHelp" text="Help" tap="goToHelpPage" />
+        </StackLayout>
+      </ActionBar.titleView>
+    </ActionBar>
   </Page.actionBar>
   <StackLayout cssClass="stackStyle">
     <Button id="buttonSubmitProblem" text="Submit a problem" tap="goToLocationPage"/>

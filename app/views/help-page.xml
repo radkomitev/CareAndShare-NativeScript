@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <Page.actionBar>
+      <ActionBar title="Help page"/>
+  </Page.actionBar>
+  <StackLayout id="stackHelp" cssClass="stackStyle">
+    <Label id="labelTitle" text="How to submit a problem" horizontalAlignment="center"/>
+    <Label id="labelHelpFirst" text="follow theese steps" horizontalAlignment="center"/>
+    <Label id="labelHelpSecond" text="1. Identify the problem" horizontalAlignment="center"/>
+    <Label id="labelHelpThird" text="2. Detect the location of the problem" horizontalAlignment="center"/>
+    <Label id="labelHelpFourth" text="3. Capture the problem" horizontalAlignment="center"/>
+    <Label id="labelHelpFifth" text="4. Describe the problem" horizontalAlignment="center"/>
+    <Label id="labelHelpSixth" text="5. Submit the problem" horizontalAlignment="center"/>
+  </StackLayout>
+</Page>

@@ -1,12 +1,18 @@
 var frameModule = require("ui/frame");
 var view = require("ui/core/view");
 var colorModule = require("color");
+var actionBarModule = require("ui/action-bar");
 
 var page;
 var isClicked = true;
 
 function pageLoaded(args) {
     page = args.object;
+}
+
+exports.goToHelpPage = function(){
+    var topmost = frameModule.topmost();
+    topmost.navigate("./views/help-page");  
 }
 
 exports.goToLocationPage = function(){
