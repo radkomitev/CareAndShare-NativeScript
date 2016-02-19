@@ -13,7 +13,10 @@ function pageLoaded(args) {
 	var query = new Everlive.Query();
 	query.where()
 		.done()
-		.select("title","idea","categoryName","priority","location","image");
+		.orderDesc()
+		.select("title","idea","categoryName","priority","location","image")
+		.skip(0)
+		.take(10);
 
 	data.get(query)
 		.then(function(data) {

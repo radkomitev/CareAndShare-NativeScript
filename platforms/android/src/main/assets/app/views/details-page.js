@@ -17,10 +17,10 @@ var tfTitle,
 
 function pageLoaded(args) {
     var page = args.object;
-    
+
     page.bindingContext = page.navigationContext;
     imageValue = page.bindingContext.image;
-    console.log("tukaa"+ imageValue);
+    console.log("tukaa" + imageValue);
     locationValue = page.bindingContext.location;
 
     problemInfo = {};
@@ -56,16 +56,44 @@ exports.submitProblem = function() {
         // });
     } else {
 
+        var category;
+
+        switch (selectedCategoryIndex.selectedIndex) {
+            case 0:
+                category = "Health";
+                break;
+            case 1:
+                category =  "Infrastructure";
+                break;
+            case 2:
+                category = "Sport";
+                break;
+            case 3:
+                category = "Animal";
+                break;
+            default:
+                category = "Other";
+                break;
+        }
+
+        if(!imageValue){
+            imageValue = "http://www.visual4d.it/wp-content/themes/invictus_3.2.3/images/dummy-image.jpg";
+
+            // imageValue = "http://www.ckmmphotographic.ca/wordpress/wp-content/themes/fullscene/images/no-image-320x200.png";
+        }
+
         problemInfo.title = tfTitle.text;
         problemInfo.idea = tfIdea.text;
         problemInfo.priority = +priorityValue.value;
-        problemInfo.categoryName = selectedCategoryIndex.selectedIndex;
+        problemInfo.categoryName = category;
         problemInfo.location = locationValue;
         problemInfo.image = imageValue;
 
+console.log(JSON.stringify(problemInfo));
         var data = el.data('problem');
 
         data.create(problemInfo, function(data) {
+            console.log("fdsgfdgf");
             console.log(JSON.stringify(data));
         }, function(error) {
             console.log(JSON.stringify(error));
