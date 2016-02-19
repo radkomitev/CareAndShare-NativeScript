@@ -8,7 +8,8 @@ function pageLoaded(args) {
 	let page = args.object;
 	var vm = eventModule.evViewModel;
 	page.bindingContext = vm;
-
+    
+    loadUi(page);
 	var data = el.data('problem');
 	var query = new Everlive.Query();
 	query.where()
@@ -30,4 +31,9 @@ function pageLoaded(args) {
 
 }
 
+function loadUi(page){
+
+    var myPage  = page.getViewById("listPage");
+    myPage.backgroundImage = "~/eee.jpg";
+}
 exports.pageLoaded = pageLoaded;

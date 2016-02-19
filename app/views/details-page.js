@@ -20,8 +20,9 @@ function pageLoaded(args) {
 
     page.bindingContext = page.navigationContext;
     imageValue = page.bindingContext.image;
-    console.log("tukaa" + imageValue);
     locationValue = page.bindingContext.location;
+
+    loadUi(page);
 
     problemInfo = {};
     tfTitle = page.getViewById("title");
@@ -39,6 +40,16 @@ function pageLoaded(args) {
 
     page.bindingContext = model;
 };
+
+function loadUi(page) {
+
+    var myPage = page.getViewById("detailPage");
+    myPage.backgroundImage = "~/eee.jpg";
+
+    var submitBtn = page.getViewById("buttonSubmit");
+    submitBtn.backgroundImage = "~/yellow.jpg";
+
+}
 
 exports.pageLoaded = pageLoaded;
 
@@ -63,7 +74,7 @@ exports.submitProblem = function() {
                 category = "Health";
                 break;
             case 1:
-                category =  "Infrastructure";
+                category = "Infrastructure";
                 break;
             case 2:
                 category = "Sport";
@@ -76,11 +87,13 @@ exports.submitProblem = function() {
                 break;
         }
 
-        if(!imageValue){
+console.log("image " + imageValue);
+        if (!imageValue) {
             imageValue = "http://www.visual4d.it/wp-content/themes/invictus_3.2.3/images/dummy-image.jpg";
-
+console.log("image2 " + imageValue);
             // imageValue = "http://www.ckmmphotographic.ca/wordpress/wp-content/themes/fullscene/images/no-image-320x200.png";
         }
+console.log("image3 " + imageValue);
 
         problemInfo.title = tfTitle.text;
         problemInfo.idea = tfIdea.text;
@@ -89,14 +102,14 @@ exports.submitProblem = function() {
         problemInfo.location = locationValue;
         problemInfo.image = imageValue;
 
-console.log(JSON.stringify(problemInfo));
+        console.log(JSON.stringify(problemInfo));
         var data = el.data('problem');
 
         data.create(problemInfo, function(data) {
             console.log("fdsgfdgf");
             console.log(JSON.stringify(data));
         }, function(error) {
-            console.log(JSON.stringify(error));
+            console.log("error" + JSON.stringify(error));
         });
         var topmost = frameModule.topmost();
         topmost.navigate("./main-page");

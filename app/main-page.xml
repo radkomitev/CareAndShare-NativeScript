@@ -9,7 +9,7 @@
       </ActionBar.titleView>
     </ActionBar>
   </Page.actionBar>
-  <StackLayout cssClass="stackStyle">
+  <StackLayout cssClass="stackStyle" id="initialPage">
     <Button id="buttonSubmitProblem" text="Submit a problem" tap="goToLocationPage"/>
     <Button id="buttonListProblem" text="List problems" tap="goTolistProblemsPage" />
     <Button id="buttonAboutCareAndShare" text="About CareAndShare" tap="aboutApp" />

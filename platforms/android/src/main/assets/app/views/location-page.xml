@@ -2,8 +2,8 @@
   <Page.actionBar>
       <ActionBar title="Location"/>
   </Page.actionBar>
-  <StackLayout cssClass="stackStyle">
+  <StackLayout cssClass="stackStyle" id="locationPage">
     <Label text="Location page"/>
-    <Button text="Go next" tap="goToCameraPage"/>
+    <Button text="Go next" tap="goToCameraPage" id="goToCameraBtn"/>
   </StackLayout>
 </Page>

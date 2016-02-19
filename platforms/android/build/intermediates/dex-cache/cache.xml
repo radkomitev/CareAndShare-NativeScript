@@ -2,6 +2,27 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\pre-dexed\nativescript-vibrate\debug\internal_impl-22.2.1-03d01e9066af1020428d26d0e98edf31600335dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\pre-dexed\debug\widgets-9f2c2e0041281522d9ccffe08affabb7c015edb3.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\pre-dexed\nativescript-vibrate\debug\classes-1b211f69a1c9d48846e3af2b78a815ad482dc2bb.jar" />
+    </item>
+    <item
         jar="C:\Users\User\AppData\Local\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -16,11 +37,11 @@
         <dex dex="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\pre-dexed\debug\nativescript-3c2e348851855e30458037acda14a8647d824f10.jar" />
     </item>
     <item
-        jar="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\libs\widgets.jar"
+        jar="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
-        <dex dex="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\pre-dexed\debug\widgets-9f2c2e0041281522d9ccffe08affabb7c015edb3.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\User\Desktop\last\CareAndShare-NativeScript\platforms\android\build\intermediates\pre-dexed\nativescript-vibrate\debug\classes-4278f1112550c97ed907dd36e27f4028d0b2e51b.jar" />
     </item>
 
 </items>

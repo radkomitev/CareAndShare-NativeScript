@@ -21,17 +21,19 @@ function pageLoaded(args) {
 	page.bindingContext = page.navigationContext;
 	myLocation = page.bindingContext.locationProblem;
 
+	loadUi(page);
+
 	myImage = page.getViewById("myImg");
 	zoomInfoLabel = page.getViewById("zoomInfo");
-	if (!imageSet) {};
+	if (!imageSet) {
+		console.log("image is not set" + imageSet);
+	};
 
 	myImage.on('doubleTap', function(args) {
 
 		if (!isImageClicked) {
 			console.log("first");
 			isImageClicked = true;
-			// myImage.width *= 2;
-			// myImage.height *= 2;
 			myImage.animate({
 				duration: 3000,
 				rotate: 360,
@@ -56,13 +58,12 @@ function pageLoaded(args) {
 					x: 1
 				}
 			});
-			// myImage.width *= 0.5;
-			// myImage.height *= 0.5;
 			isImageClicked = false;
 			zoomInfoLabel.text = "double tap to zoom in";
 		}
 	});
 }
+
 
 function takePicture() {
 
@@ -79,8 +80,6 @@ function takePicture() {
 		};
 		el.Files.create(file, function(response) {
 
-console.log(JSON.stringify(response));
-
 			fileUri = response.result.Uri;
 			console.log('FILE ID  +++ ' + fileUri);
 			imageSet = true;
@@ -91,8 +90,21 @@ console.log(JSON.stringify(response));
 	});
 }
 
+
+function loadUi(page){	
+
+var myPage = page.getViewById("cameraPage");
+	myPage.backgroundImage = "~/eee.jpg";
+
+	var cameraBtn = page.getViewById("takePictureBtn");
+	cameraBtn.backgroundImage = "~/yellow.jpg";
+
+	var btnGoNextBtn = page.getViewById("goNextButton");
+	btnGoNextBtn.backgroundImage = "~/yellow.jpg";
+}
+
 exports.goToDetailsPage = function() {
-	
+
 	// console.log(sound);
 	// var tada = sound.create("~/sounds/camera.mp3");
 	// console.log(tada);
@@ -104,7 +116,7 @@ exports.goToDetailsPage = function() {
 	// tada.play();
 
 	var topmost = frameModule.topmost();
-	
+
 	var navigationEntry = {
 		moduleName: "./views/details-page",
 		context: {
