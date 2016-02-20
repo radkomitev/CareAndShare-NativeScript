@@ -3,6 +3,8 @@ var geolocation = require("nativescript-geolocation");
 var observable = require("data/observable");
 var observable_array = require("data/observable-array");
 var dialogs = require("ui/dialogs");
+var http = require("http");
+var locationToPass;
 var mySwitch;
 
 function pageLoaded(args) {
@@ -17,11 +19,14 @@ exports.goToCameraPage = function() {
 
 	var topmost = frameModule.topmost();
 
-	//TODO: replace MYlocation with real string location
+	if (!locationToPass) {
+		locationToPass = "No added location";
+	}
+
 	var navigationEntry = {
 		moduleName: "./views/camera-page",
 		context: {
-			locationProblem: "MyLocation"
+			locationProblem: locationToPass
 		},
 		animated: true
 	};
@@ -55,20 +60,39 @@ exports.takeLocation = function(args) {
 			timeout: 20000
 		}).
 		then(function(loc) {
-			if (loc) {
-				//console.log("Current location is: " + JSON.stringify(loc));
-				console.log("latitude ++++ " + loc.latitude);
-				console.log("longitude ++++ " + loc.longitude);				
+				if (loc) {
 
-			}
-		}, function(e) {
-			dialogs.alert({
-				title: "Problem with taking location",
-				message: e.message,
-				okButtonText: "Ok"
+					console.log("latitude ++++ " + loc.latitude);
+					console.log("longitude ++++ " + loc.longitude);
+
+					var lat = loc.latitude;
+					var logn = loc.longitude;
+
+					var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + logn + "&key=AIzaSyB6DUf9Jr8CHXH9YzA-U3wj5pykZ8_gdQw";
+
+
+					http.getJSON(url).then(function(r) {
+
+							locationToPass = JSON.stringify(r.results[0].formatted_address);
+
+							console.log("My adrress" + locationToPass);
+						},
+						function(e) {
+							console.log("Error with talking location like string" + e);
+
+						});
+
+
+				}
+			},
+			function(e) {
+				dialogs.alert({
+					title: "Problem with taking location",
+					message: e.message,
+					okButtonText: "Ok"
+				});
+				console.log("Error: " + e.message);
 			});
-			console.log("Error: " + e.message);
-		});
 	} else {
 		dialogs.alert({
 			title: "Switch is not on",

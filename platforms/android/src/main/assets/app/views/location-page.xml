@@ -7,7 +7,7 @@
         <Label text="Location page"/>
 
 	<StackLayout orientation="horizontal" horizontalAlignment="center">
-		<Label text="Take location" fontSize="20" color="white"/>
+		<Label text="Enable location" fontSize="20" color="white"/>
      	<Switch checked="false" id="switchForEnableLocation"  propertyChange="changeS"/>
     </StackLayout>
 
