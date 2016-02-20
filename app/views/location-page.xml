@@ -2,8 +2,16 @@
   <Page.actionBar>
       <ActionBar title="Location"/>
   </Page.actionBar>
+
   <StackLayout cssClass="stackStyle" id="locationPage">
-    <Label text="Location page"/>
+        <Label text="Location page"/>
+
+	<StackLayout orientation="horizontal" horizontalAlignment="center">
+		<Label text="Take location" fontSize="20" color="white"/>
+     	<Switch checked="false" id="switchForEnableLocation"  propertyChange="changeS"/>
+    </StackLayout>
+
+    <Button text="Take location" tap="takeLocation" id="takeLocationBtn"/>
     <Button text="Go next" tap="goToCameraPage" id="goToCameraBtn"/>
   </StackLayout>
 </Page>

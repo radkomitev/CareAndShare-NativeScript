@@ -6,6 +6,7 @@ var el = new Everlive('wzgxk32dkp4rhuz0');
 
 function pageLoaded(args) {
 	let page = args.object;
+
 	var vm = eventModule.evViewModel;
 	page.bindingContext = vm;
     

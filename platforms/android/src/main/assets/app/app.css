@@ -112,6 +112,11 @@ button {
 	horizontal-align:stretch;
 }
 
+image{
+	margin-left : 10;
+	margin-right : 10;
+}
+
 .stackStyle{
 	background-image : "~/black.jpg";
 }

@@ -1,0 +1,188 @@
+﻿.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+#mainPage
+{
+	background-color: black;
+}
+
+button {
+    font-size: 42;
+    margin-top: 20;
+	horizontal-align:stretch;
+	background-color: wheat;
+	font-size: 20;
+	height: 70;
+	border-radius: 10;
+}
+
+#buttonHelp
+{
+	horizontal-align:stretch;
+	background-color: white;
+	margin-left: 200;
+	border-radius: 30;
+	font-size: 15;
+	height: 40;
+	width: 60;
+}
+
+#labelHelp{
+	padding-top: 20;
+	font-size: 20;
+}
+
+.detailInfoLabel{
+	margin-left:15;
+	color : white;
+	horizontal-align:stretch;
+}
+
+.stackStyle{
+	background-color: black;
+}
+
+.bigLabelStyle{
+	color:white;
+	horizontal-align:center;
+	margin-bottom:10;
+	font-size:50;
+}
+
+#title {
+	color: black;
+	background-color: wheat;
+	margin-top: 20;
+    border-radius: 10;
+}
+
+#idea {
+	color: black;
+	background-color: wheat;
+	margin-top: 20;
+	border-radius: 10;
+}
+
+#labelChooseCategory {
+	margin-top: 20;
+	font-size: 20;
+	text-align: center;
+	color: wheat;
+}
+
+
+#sliderPriority {
+	margin-top: 30;
+	color: wheat;
+}
+
+#sliderPriorityValue {
+	font-size: 20;
+	color: wheat;
+	horizontal-align:center;
+}
+
+#listPicker {
+	background-color: wheat;
+	border-radius: 10;
+
+}
+
+#buttonSubmit {
+	background-color: green;
+	margin-top: 20;
+	border-radius: 10;
+}
+
+#labelAboutApp{
+	background-color: black;
+	color: wheat;
+	word-wrap: break-word;
+	margin-top: 0;
+	font-size: 22;
+	opacity: 0;
+}
+
+.detailInfoLabel{
+	margin-left:15;
+	color : white;
+	horizontal-align:stretch;
+}
+
+.stackStyle{
+	background-image : "~/black.jpg";
+}
+
+.bigLabelStyle{
+	color:white;
+	horizontal-align:center;
+	margin-bottom:10;
+	font-size:50;
+}
+
+#labelTitle{
+	font-size: 25;
+	color: wheat;
+	margin-bottom: -15;
+}
+
+#labelIdea{
+	font-size: 25;
+	color: wheat;
+	margin-bottom: -15;
+}
+.message {
+    font-size: 20;
+    color: #284848;
+    horizontal-align: center;
+}
+
+#labelHelpFirst{
+	opacity: 0;
+	color: wheat;
+	padding-top: 100;
+	font-size: 20;
+}
+
+#labelHelpSecond{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpThird{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpFourth{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpFifth{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
+
+#labelHelpSixth{
+	opacity: 0;
+	color: wheat;
+	padding-top: 20;
+	font-size: 20;
+	text-decoration: underline;
+}
