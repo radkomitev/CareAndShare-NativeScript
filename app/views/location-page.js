@@ -6,6 +6,7 @@ var dialogs = require("ui/dialogs");
 var http = require("http");
 var locationToPass;
 var mySwitch;
+var cameraBtn;
 
 function pageLoaded(args) {
 	var page = args.object;
@@ -17,21 +18,23 @@ function pageLoaded(args) {
 
 exports.goToCameraPage = function() {
 
-	var topmost = frameModule.topmost();
+	if (cameraBtn.enable) {
+		var topmost = frameModule.topmost();
 
-	if (!locationToPass) {
-		locationToPass = "No added location";
+		if (!locationToPass) {
+			locationToPass = "No added location";
+		}
+
+		var navigationEntry = {
+			moduleName: "./views/camera-page",
+			context: {
+				locationProblem: locationToPass
+			},
+			animated: true
+		};
+
+		topmost.navigate(navigationEntry);
 	}
-
-	var navigationEntry = {
-		moduleName: "./views/camera-page",
-		context: {
-			locationProblem: locationToPass
-		},
-		animated: true
-	};
-
-	topmost.navigate(navigationEntry);
 }
 
 exports.changeS = function(args) {
@@ -51,6 +54,8 @@ exports.changeS = function(args) {
 }
 
 exports.takeLocation = function(args) {
+
+	cameraBtn.enable = false;
 
 	if (mySwitch.checked === true) {
 		var location = geolocation.getCurrentLocation({
@@ -74,10 +79,11 @@ exports.takeLocation = function(args) {
 					http.getJSON(url).then(function(r) {
 
 							locationToPass = JSON.stringify(r.results[0].formatted_address);
-
+							cameraBtn.enable = true;
 							console.log("My adrress" + locationToPass);
 						},
 						function(e) {
+							cameraBtn.enable = true;
 							console.log("Error with talking location like string" + e);
 
 						});
@@ -108,7 +114,8 @@ function loadUi(page) {
 	var myPage = page.getViewById("locationPage");
 	myPage.backgroundImage = "~/eee.jpg";
 
-	var cameraBtn = page.getViewById("goToCameraBtn");
+	cameraBtn = page.getViewById("goToCameraBtn");
+	cameraBtn.enable = true;
 	cameraBtn.backgroundImage = "~/yellow.jpg";
 
 	var locationBtn = page.getViewById("takeLocationBtn");

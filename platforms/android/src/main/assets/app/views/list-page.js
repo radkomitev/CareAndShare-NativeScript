@@ -11,11 +11,12 @@ function pageLoaded(args) {
 	page.bindingContext = vm;
     
     loadUi(page);
+    
 	var data = el.data('problem');
 	var query = new Everlive.Query();
 	query.where()
 		.done()
-		.orderDesc()
+		.order()
 		.select("title","idea","categoryName","priority","location","image")
 		.skip(0)
 		.take(10);
@@ -23,7 +24,8 @@ function pageLoaded(args) {
 	data.get(query)
 		.then(function(data) {
 			
-			vm.loadProblems(data.result);
+			vm.loadProblems(data.result.reverse());
+
 			console.log(JSON.stringify(data.result));
 		}, function(error) {
 			console.log("fdfd" + JSON.stringify(error));
