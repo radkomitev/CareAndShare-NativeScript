@@ -112,15 +112,15 @@ function loadUi(page) {
 
 exports.goToDetailsPage = function() {
 
-	console.log(sound);
-	var tada = sound.create("~/sounds/camera.mp3");
-	console.log(tada);
+	// console.log(sound);
+	// var tada = sound.create("~/sounds/camera.mp3");
+	// console.log(tada);
 
-	for (var k in tada) {
-		console.log(k);
-	};
+	// for (var k in tada) {
+	// 	console.log(k);
+	// };
 
-	tada.play();
+	// tada.play();
 	
 	if (btnGoNextBtn.enable || !hasCalledTakePicture) {
 		var topmost = frameModule.topmost();

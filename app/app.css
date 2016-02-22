@@ -15,24 +15,22 @@ button {
 	horizontal-align:stretch;
 	background-color: wheat;
 	font-size: 20;
-	height: 70;
+	height: 80;
 	border-radius: 10;
 }
 
-#buttonHelp
-{
-	horizontal-align:stretch;
-	background-color: white;
-	margin-left: 200;
-	border-radius: 30;
-	font-size: 15;
-	height: 40;
-	width: 60;
+
+#buttonSubmitProblem{
+	 margin-top: 110;
 }
 
 #labelHelp{
 	padding-top: 20;
 	font-size: 20;
+}
+
+#zoomInfo{
+	margin-top:15;
 }
 
 .detailInfoLabel{
@@ -132,6 +130,7 @@ image{
 	font-size: 25;
 	color: wheat;
 	margin-bottom: -15;
+	text-decoration: underline;
 }
 
 #labelIdea{
@@ -149,7 +148,8 @@ image{
 	opacity: 0;
 	color: wheat;
 	padding-top: 100;
-	font-size: 20;
+	font-size: 20;	
+	text-decoration: underline;
 }
 
 #labelHelpSecond{
@@ -157,7 +157,6 @@ image{
 	color: wheat;
 	padding-top: 20;
 	font-size: 20;
-	text-decoration: underline;
 }
 
 #labelHelpThird{
@@ -165,7 +164,6 @@ image{
 	color: wheat;
 	padding-top: 20;
 	font-size: 20;
-	text-decoration: underline;
 }
 
 #labelHelpFourth{
@@ -173,7 +171,6 @@ image{
 	color: wheat;
 	padding-top: 20;
 	font-size: 20;
-	text-decoration: underline;
 }
 
 #labelHelpFifth{
@@ -181,7 +178,6 @@ image{
 	color: wheat;
 	padding-top: 20;
 	font-size: 20;
-	text-decoration: underline;
 }
 
 #labelHelpSixth{
@@ -189,5 +185,4 @@ image{
 	color: wheat;
 	padding-top: 20;
 	font-size: 20;
-	text-decoration: underline;
 }

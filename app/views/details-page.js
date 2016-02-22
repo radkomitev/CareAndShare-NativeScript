@@ -5,6 +5,9 @@ var Everlive = require("~/libs/everlive/everlive.all.min");
 var el = new Everlive('wzgxk32dkp4rhuz0');
 var dialogs = require("ui/dialogs");
 var Toast = require("nativescript-toast");
+var problemServices = require("~/services/problems");
+var dbContext = require("~/helpers/dbContext");
+
 // var vibrator = require("nativescript-vibrate");
 
 //ui elements
@@ -15,9 +18,10 @@ var tfTitle,
     locationValue,
     imageValue;
 
+
+
 function pageLoaded(args) {
     var page = args.object;
-
     page.bindingContext = page.navigationContext;
     imageValue = page.bindingContext.image;
     locationValue = page.bindingContext.location;
@@ -39,7 +43,7 @@ function pageLoaded(args) {
     });
 
     page.bindingContext = model;
-};
+}
 
 function loadUi(page) {
 
@@ -59,12 +63,6 @@ exports.submitProblem = function() {
 
         Toast.makeText("Input information shoud be at least 3 symbols", "long").show();
 
-        //vibrator.vibration(2000);
-        // dialogs.alert({
-        //     title: "Invalid info input",
-        //     message: "Make sure all the fields are filled with valid info",
-        //     okButtonText: "Ok"
-        // });
     } else {
 
         var category;
@@ -87,13 +85,10 @@ exports.submitProblem = function() {
                 break;
         }
 
-console.log("image " + imageValue);
         if (!imageValue) {
             imageValue = "http://www.visual4d.it/wp-content/themes/invictus_3.2.3/images/dummy-image.jpg";
-console.log("image2 " + imageValue);
-            // imageValue = "http://www.ckmmphotographic.ca/wordpress/wp-content/themes/fullscene/images/no-image-320x200.png";
+
         }
-console.log("image3 " + imageValue);
 
         problemInfo.title = tfTitle.text;
         problemInfo.idea = tfIdea.text;
@@ -106,12 +101,12 @@ console.log("image3 " + imageValue);
         var data = el.data('problem');
 
         data.create(problemInfo, function(data) {
-            console.log("fdsgfdgf");
             console.log(JSON.stringify(data));
         }, function(error) {
             console.log("error" + JSON.stringify(error));
         });
+
         var topmost = frameModule.topmost();
         topmost.navigate("./main-page");
     }
-}
+};

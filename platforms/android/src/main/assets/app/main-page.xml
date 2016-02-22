@@ -1,18 +1,12 @@
-<Page id="mainPage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <Page.actionBar>
-    <ActionBar>
-      <ActionBar.titleView>
-        <StackLayout orientation="horizontal">
-          <Label id="labelHelp" text="Home Page"/>
-          <Button id="buttonHelp" text="Help" tap="goToHelpPage" />
-        </StackLayout>
-      </ActionBar.titleView>
-    </ActionBar>
-  </Page.actionBar>
+<Page id="mainPage" xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden = "true">
+
   <StackLayout cssClass="stackStyle" id="initialPage">
     <Button id="buttonSubmitProblem" text="Submit a problem" tap="goToLocationPage"/>
-    <Button id="buttonListProblem" text="List problems" tap="goTolistProblemsPage" />
+    <Button id="buttonListProblem" text="List problems" tap="goTolistProblemsPage" />    
+     <Button id="buttonHelp" text="How to..." tap="goToHelpPage" />
     <Button id="buttonAboutCareAndShare" text="About CareAndShare" tap="aboutApp" />
-    <TextView id="labelAboutApp" editable="false" text="This is the easiest and most convenient way to share a problem or even just an idea for improvement and be sure that it will be transferred to the respective authorities. This application is for everyone who cannot just pass by issues faced while traveling to work. This application is for everyone who cares for the others, cares for his children, cares for the future. If you are a person of action, then this application is the one for you!"/>
+    <TextView id="labelAboutApp" textWrap="true" editable="false" text="This is the easiest and most convenient way to share a problem or even just an idea for improvement and be sure that it will be transferred to the respective authorities. This application is for everyone who cannot just pass by issues faced while traveling to work. This application is for everyone who cares for the others, cares for his children, cares for the future. If you are a person of action, then this application is the one for you!
+
+      "/>
   </StackLayout>
 </Page>
