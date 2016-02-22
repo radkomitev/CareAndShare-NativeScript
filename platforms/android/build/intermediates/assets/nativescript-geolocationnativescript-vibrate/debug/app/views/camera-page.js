@@ -14,6 +14,8 @@ var isImageClicked = false;
 var imageToPass;
 var zoomInfoLabel;
 var imageSet = false;
+var hasCalledTakePicture = false;
+var btnGoNextBtn;
 
 function pageLoaded(args) {
 	var page = args.object;
@@ -64,11 +66,13 @@ function pageLoaded(args) {
 	});
 }
 
-
 function takePicture() {
 
+	hasCalledTakePicture = true;
+	btnGoNextBtn.enable = false;
 
 	camera.takePicture().then(function(picture) {
+
 		myImage.imageSource = picture;
 		zoomInfoLabel.visibility = "visible";
 
@@ -83,23 +87,26 @@ function takePicture() {
 			fileUri = response.result.Uri;
 			console.log('FILE ID  +++ ' + fileUri);
 			imageSet = true;
+			btnGoNextBtn.enable = true;
 
 		}, function(err) {
+			btnGoNextBtn.enable = true;
 			console.log("Unfortunately the upload failed: " + err.message);
 		});
 	});
+	btnGoNextBtn.enable = false;
 }
 
 
-function loadUi(page){	
+function loadUi(page) {
 
-var myPage = page.getViewById("cameraPage");
+	var myPage = page.getViewById("cameraPage");
 	myPage.backgroundImage = "~/eee.jpg";
 
 	var cameraBtn = page.getViewById("takePictureBtn");
 	cameraBtn.backgroundImage = "~/yellow.jpg";
 
-	var btnGoNextBtn = page.getViewById("goNextButton");
+	btnGoNextBtn = page.getViewById("goNextButton");
 	btnGoNextBtn.backgroundImage = "~/yellow.jpg";
 }
 
@@ -114,19 +121,21 @@ exports.goToDetailsPage = function() {
 	// };
 
 	// tada.play();
+	
+	if (btnGoNextBtn.enable || !hasCalledTakePicture) {
+		var topmost = frameModule.topmost();
 
-	var topmost = frameModule.topmost();
+		var navigationEntry = {
+			moduleName: "./views/details-page",
+			context: {
+				image: fileUri,
+				location: myLocation
+			},
+			animated: false
+		};
 
-	var navigationEntry = {
-		moduleName: "./views/details-page",
-		context: {
-			image: fileUri,
-			location: myLocation
-		},
-		animated: false
-	};
-
-	topmost.navigate(navigationEntry);
+		topmost.navigate(navigationEntry);
+	}
 }
 
 exports.pageLoaded = pageLoaded;

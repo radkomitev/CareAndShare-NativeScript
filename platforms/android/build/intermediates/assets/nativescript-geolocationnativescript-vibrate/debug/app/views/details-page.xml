@@ -1,7 +1,5 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <Page.actionBar>
-      <ActionBar title="Details"/>
-  </Page.actionBar>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden = "true">
+
   <StackLayout cssClass="stackStyle" id="detailPage">
     <Label id="labelTitle" text="Title" horizontalAlignment="center"/>
     <TextField id="title" hint="your brief title must be greather than 3 symbols..." keyboardType="email" autocorrect="false" autocapitalizationType="none" textWrap="true"/>

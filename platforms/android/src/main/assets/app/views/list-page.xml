@@ -2,7 +2,10 @@
 
   <StackLayout  cssClass="stackStyle" id="listPage">
     <Label text="All problems" cssClass="bigLabelStyle"/>
-      <ListView  items="{{events}}" >
+      <StackLayout id="labelNoInternetConnection" height="800" width="360"  visibility ="collapsed">
+         <Label text = "No internet connection"  color="white" marginTop="150" marginLeft="50"  textWrap="true" fontSize="50"/>
+      </StackLayout>
+      <ListView  items="{{events}}"  >
         <ListView.itemTemplate>
           <StackLayout orientation="horizontal"  >
             <StackLayout width="150" height="150">

@@ -136,7 +136,9 @@ exports.goToDetailsPage = function() {
 
 		topmost.navigate(navigationEntry);
 	}
-}
+};
+
+
 
 exports.pageLoaded = pageLoaded;
 exports.takePicture = takePicture;

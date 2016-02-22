@@ -14,13 +14,8 @@ class EventViewModel extends observable.Observable {
 		this.events = [];
 	}
 
-	loadProblems(data){
-		this.set("events",data);
-	}
-
-	backAction() {
-		var topmost = frameMode.topmost();
-		topmost.navigate("main-page");
+	loadProblems(data) {
+		this.set("events", data);
 	}
 }
 

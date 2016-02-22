@@ -8,6 +8,7 @@ var indicator = new activityIndicatorModule.ActivityIndicator();
 var problemServices = require("~/services/problems");
 var dbContext = require("~/helpers/dbContext");
 var image;
+var labelInternetConnection;
 
 function pageLoaded(args) {
 	let page = args.object;
@@ -41,12 +42,40 @@ function pageLoaded(args) {
 
 			vm.loadProblems(data.result.reverse());
 
+
 			console.log(JSON.stringify(data.result));
+			
+			labelInternetConnection.visibility = "collapsed";
 		}, function(error) {
-			console.log("fdfd" + JSON.stringify(error));
+
+			console.log("Error " + JSON.stringify(error));
+
+			labelInternetConnection.visibility = "visible";
+			blink(labelInternetConnection);
 		});
 
 
+}
+
+function  blink(label){
+var animation1 = label.createAnimation({ opacity: 0 });
+var animation2 = label.createAnimation({ opacity: 1 });
+	animation1.play()
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () { return animation1.play(); })
+    .then(function () { return animation2.play(); })
+    .then(function () {
+    console.log("Animation finished");
+})
+    .catch(function (e) {
+    console.log(e.message);
+});
 }
 
 function getAllProblems() {
@@ -57,7 +86,7 @@ function getAllProblems() {
 	problemServices.problem.getAll().then(
 		function(problems) {
 
-			console.log("ko e towaw" +JSON.stringify(problems));
+			console.log("All problems " + JSON.stringify(problems));
 		},
 		function(e) {
 			throw Error(e);
@@ -65,11 +94,15 @@ function getAllProblems() {
 
 }
 
+
 function loadUi(page) {
+
 
 	var myPage = page.getViewById("listPage");
 	myPage.backgroundImage = "~/eee.jpg";
 	image = page.getViewById("myimage");
+	labelInternetConnection = page.getViewById("labelNoInternetConnection");
+	labelInternetConnection.visibility = "collapsed";
 }
 
 exports.pageLoaded = pageLoaded;

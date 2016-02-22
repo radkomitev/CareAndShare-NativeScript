@@ -1,21 +1,20 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-    <Page.actionBar>
-      <ActionBar title="List"/>
-  </Page.actionBar>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden = "true">
+
   <StackLayout  cssClass="stackStyle" id="listPage">
     <Label text="All problems" cssClass="bigLabelStyle"/>
-      <ListView  items="{{events}}" >
+      <ListView  items="{{events}}" loadMoreItemsEvent="loadMore" >
         <ListView.itemTemplate>
           <StackLayout orientation="horizontal"  >
             <StackLayout width="150" height="150">
-              <Image  src="{{image}}" />
+              <Image  src="{{image}}" id="myimage" />
+            <!--    <ActivityIndicator busy="isLoading" /> -->
             </StackLayout>
             <StackLayout>  
               <Label text="{{'Title: '+ title}} " id="titleForEvent" cssClass="detailInfoLabel"/>
               <Label text="{{'Idea: ' + idea}} " id="ideaForEvent" cssClass="detailInfoLabel"/>
               <Label text="{{'Category: '+ categoryName}} " id="categoryForEvent" cssClass="detailInfoLabel"/>
               <Label text="{{'Priority: '+ priority}} " id="priorityForEvent" cssClass="detailInfoLabel"/>
-              <Label text="{{'Location: '+ location}}  " id="CategoryForEvent" cssClass="detailInfoLabel"/>
+              <Label text="{{'Location: '+ location}}" textWrap="true" id="CategoryForEvent" cssClass="detailInfoLabel"/>
             </StackLayout>
         </StackLayout>
       </ListView.itemTemplate>
