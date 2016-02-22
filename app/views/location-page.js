@@ -79,6 +79,11 @@ exports.takeLocation = function(args) {
 					http.getJSON(url).then(function(r) {
 
 							locationToPass = JSON.stringify(r.results[0].formatted_address);
+
+							while (locationToPass.indexOf("\\") > 0) {
+								locationToPass = locationToPass.replace("\\", " ");
+							}
+
 							cameraBtn.enable = true;
 							console.log("My adrress" + locationToPass);
 						},
