@@ -1,12 +1,12 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden = "true">
 
   <StackLayout cssClass="stackStyle" id="locationPage">
-        
-        
-
-	<StackLayout orientation="horizontal"  marginTop="200" horizontalAlignment="center">
-		<Label text="Enable location" fontSize="20"   color="white"/>
-     	<Switch checked="false" id="switchForEnableLocation"  propertyChange="changeS"/>
+   <StackLayout height="150" width="200" >
+     <Label text = ""  color="white"  width="400"  marginTop="50" marginLeft="50" id="labelLocation"  textWrap="true" fontSize="20"/>
+   </StackLayout>
+   <StackLayout orientation="horizontal"  marginTop="20" horizontalAlignment="center">
+	 <Label text="Enable location" fontSize="20"   color="white"/>
+     <Switch checked="false" id="switchForEnableLocation"  propertyChange="changeS"/>
     </StackLayout>
 
     <Button text="Take location" tap="takeLocation" id="takeLocationBtn"/>

@@ -1,12 +1,10 @@
-'use strict';
-
-let view = require('ui/core/view');
+var view = require('ui/core/view');
 var frameModule = require("ui/frame");
 var camera = require("camera");
 var imageSource = require("image-source");
 var Everlive = require("~/libs/everlive/everlive.all.min");
 var el = new Everlive('wzgxk32dkp4rhuz0');
-let sound = require("nativescript-sound");
+var sound = require("nativescript-sound");
 var myImage;
 var fileUri;
 var myLocation;
@@ -29,7 +27,7 @@ function pageLoaded(args) {
 	zoomInfoLabel = page.getViewById("zoomInfo");
 	if (!imageSet) {
 		console.log("image is not set" + imageSet);
-	};
+	}
 
 	myImage.on('doubleTap', function(args) {
 

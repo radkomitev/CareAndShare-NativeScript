@@ -6,19 +6,17 @@ var dialogs = require("ui/dialogs");
 var http = require("http");
 var locationToPass;
 var mySwitch;
-var cameraBtn;
+var goToCameraBtn;
+var labelLocation;
 
 function pageLoaded(args) {
 	var page = args.object;
-
-	mySwitch = page.getViewById("switchForEnableLocation");
-
 	loadUi(page);
 }
 
 exports.goToCameraPage = function() {
 
-	if (cameraBtn.enable) {
+	if (goToCameraBtn.enable) {
 		var topmost = frameModule.topmost();
 
 		if (!locationToPass) {
@@ -35,7 +33,7 @@ exports.goToCameraPage = function() {
 
 		topmost.navigate(navigationEntry);
 	}
-}
+};
 
 exports.changeS = function(args) {
 
@@ -51,11 +49,11 @@ exports.changeS = function(args) {
 
 		console.log(false);
 	}
-}
+};
 
 exports.takeLocation = function(args) {
 
-	cameraBtn.enable = false;
+	goToCameraBtn.enable = false;
 
 	if (mySwitch.checked === true) {
 		var location = geolocation.getCurrentLocation({
@@ -84,11 +82,12 @@ exports.takeLocation = function(args) {
 								locationToPass = locationToPass.replace("\\", " ");
 							}
 
-							cameraBtn.enable = true;
+							goToCameraBtn.enable = true;
+							labelLocation.text = locationToPass;
 							console.log("My adrress" + locationToPass);
 						},
 						function(e) {
-							cameraBtn.enable = true;
+							goToCameraBtn.enable = true;
 							console.log("Error with talking location like string" + e);
 
 						});
@@ -112,19 +111,22 @@ exports.takeLocation = function(args) {
 		});
 	}
 
-}
+};
 
 function loadUi(page) {
 
 	var myPage = page.getViewById("locationPage");
 	myPage.backgroundImage = "~/eee.jpg";
 
-	cameraBtn = page.getViewById("goToCameraBtn");
-	cameraBtn.enable = true;
-	cameraBtn.backgroundImage = "~/yellow.jpg";
+	goToCameraBtn = page.getViewById("goToCameraBtn");
+	goToCameraBtn.enable = true;
+	goToCameraBtn.backgroundImage = "~/yellow.jpg";
 
 	var locationBtn = page.getViewById("takeLocationBtn");
 	locationBtn.backgroundImage = "~/yellow.jpg";
+
+	mySwitch = page.getViewById("switchForEnableLocation");
+	labelLocation = page.getViewById("labelLocation");
 
 }
 
